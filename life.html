@@ -1,4 +1,5 @@
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,9 +7,62 @@
     <link rel="stylesheet" href="lifeStyle.css">
     <title>Life Simulation</title>
 </head>
+
 <body>
-    <!-- <div id="settings"></div> -->
+    <div id="settings">
+        <div id="container">
+            <div id="green">
+                <h3>GREEN : </h3>
+                <div>Number : <input type="range" class="number"></input></div>
+                <div>Green x Green : <input type="range" class="attraction"></input></div>
+                <div>Green x Red : <input type="range" class="attraction"></input></div>
+                <div>Green x White : <input type="range" class="attraction"></input></div>
+                <div>Green x Blue : <input type="range" class="attraction"></input></div>
+                <div>Radius G x G : <input type="range" class="attraction"></input></div>
+                <div>Radius G x R : <input type="range" class="attraction"></input></div>
+                <div>Radius G x W : <input type="range" class="attraction"></input></div>
+                <div>Radius G x B : <input type="range" class="attraction"></input></div>
+            </div>
+            <div id="red">
+                <h3>RED : </h3>
+                <div>Number : <input type="range" class="number"></input></div>
+                <div>Red x Red : <input type="range" class="attraction"></input></div>
+                <div>Red x Green : <input type="range" class="attraction"></input></div>
+                <div>Red x White : <input type="range" class="attraction"></input></div>
+                <div>Red x Blue : <input type="range" class="attraction"></input></div>
+                <div>Radius R x R : <input type="range" class="attraction"></input></div>
+                <div>Radius R x G : <input type="range" class="attraction"></input></div>
+                <div>Radius R x W : <input type="range" class="attraction"></input></div>
+                <div>Radius R x B : <input type="range" class="attraction"></input></div>
+            </div>
+            <div id="white">
+                <h3>WHITE : </h3>
+                <div>Number : <input type="range" class="number"></input></div>
+                <div>White x White : <input type="range" class="attraction"></input></div>
+                <div>White x Red : <input type="range" class="attraction"></input></div>
+                <div>White x Green : <input type="range" class="attraction"></input></div>
+                <div>White x Blue : <input type="range" class="attraction"></input></div>
+                <div>Radius W x W : <input type="range" class="attraction"></input></div>
+                <div>Radius W x R : <input type="range" class="attraction"></input></div>
+                <div>Radius W x G : <input type="range" class="attraction"></input></div>
+                <div>Radius W x B : <input type="range" class="attraction"></input></div>
+            </div>
+            <div id="blue">
+                <h3>BLUE : </h3>
+                <div>Number : <input type="range" class="number"></input></div>
+                <div>Blue x Blue : <input type="range" class="attraction"></input></div>
+                <div>Blue x Red : <input type="range" class="attraction"></input></div>
+                <div>Blue x White : <input type="range" class="attraction"></input></div>
+                <div>Blue x Green : <input type="range" class="attraction"></input></div>
+                <div>Radius B x B : <input type="range" class="attraction"></input></div>
+                <div>Radius B x R: <input type="range" class="attraction"></input></div>
+                <div>Radius B x W: <input type="range" class="attraction"></input></div>
+                <div>Radius B x G: <input type="range" class="attraction"></input></div>
+            </div>
+        </div>
+    </div>
     <canvas id="canvas"></canvas>
 </body>
 <script src="life.js"></script>
+
 </html>

@@ -11,53 +11,53 @@
 <body>
     <div id="settings">
         <div id="container">
-            <div id="green">
-                <h3>GREEN : </h3>
-                <div>Number : <input type="range" class="number"></input></div>
-                <div>Green x Green : <input type="range" class="attraction"></input></div>
-                <div>Green x Red : <input type="range" class="attraction"></input></div>
-                <div>Green x White : <input type="range" class="attraction"></input></div>
-                <div>Green x Blue : <input type="range" class="attraction"></input></div>
-                <div>Radius G x G : <input type="range" class="attraction"></input></div>
-                <div>Radius G x R : <input type="range" class="attraction"></input></div>
-                <div>Radius G x W : <input type="range" class="attraction"></input></div>
-                <div>Radius G x B : <input type="range" class="attraction"></input></div>
+            <div id="green" class="color">
+                <h3 id="green-header">GREEN : </h3>
+                <div>Number : <input type="range" class="number"></input><span class="value"></span></div>
+                <div>Green x Green : <input id="ggf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Green x Red : <input id="grf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Green x White : <input id="gwf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Green x Blue : <input id="gbf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Radius G x G : <input id="ggr" type="range" class="radius"></input><span class="value"></span></div>
+                <div>Radius G x R : <input id="grr" type="range" class="radius"></input><span class="value"></span></div>
+                <div>Radius G x W : <input id="gwr" type="range" class="radius"></input><span class="value"></span></div>
+                <div>Radius G x B : <input id="gbr" type="range" class="radius"></input><span class="value"></span></div>
             </div>
-            <div id="red">
+            <div id="red" class="color">
                 <h3>RED : </h3>
-                <div>Number : <input type="range" class="number"></input></div>
-                <div>Red x Red : <input type="range" class="attraction"></input></div>
-                <div>Red x Green : <input type="range" class="attraction"></input></div>
-                <div>Red x White : <input type="range" class="attraction"></input></div>
-                <div>Red x Blue : <input type="range" class="attraction"></input></div>
-                <div>Radius R x R : <input type="range" class="attraction"></input></div>
-                <div>Radius R x G : <input type="range" class="attraction"></input></div>
-                <div>Radius R x W : <input type="range" class="attraction"></input></div>
-                <div>Radius R x B : <input type="range" class="attraction"></input></div>
+                <div>Number : <input type="range" class="number"></input><span class="value"></span></div>
+                <div>Red x Red : <input id="rrf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Red x Green : <input id="rgf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Red x White : <input id="rwf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Red x Blue : <input id="rbf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Radius R x R : <input id="rrr" type="range" class="radius"></input><span class="value"></span></div>
+                <div>Radius R x G : <input id="rgr" type="range" class="radius"></input><span class="value"></span></div>
+                <div>Radius R x W : <input id="rwr" type="range" class="radius"></input><span class="value"></span></div>
+                <div>Radius R x B : <input id="rbr" type="range" class="radius"></input><span class="value"></span></div>
             </div>
-            <div id="white">
+            <div id="white" class="color">
                 <h3>WHITE : </h3>
-                <div>Number : <input type="range" class="number"></input></div>
-                <div>White x White : <input type="range" class="attraction"></input></div>
-                <div>White x Red : <input type="range" class="attraction"></input></div>
-                <div>White x Green : <input type="range" class="attraction"></input></div>
-                <div>White x Blue : <input type="range" class="attraction"></input></div>
-                <div>Radius W x W : <input type="range" class="attraction"></input></div>
-                <div>Radius W x R : <input type="range" class="attraction"></input></div>
-                <div>Radius W x G : <input type="range" class="attraction"></input></div>
-                <div>Radius W x B : <input type="range" class="attraction"></input></div>
+                <div>Number : <input type="range" class="number"></input><span class="value"></span></div>
+                <div>White x White : <input id="wwf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>White x Red : <input id="wrf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>White x Green : <input id="wgf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>White x Blue : <input id="wbf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Radius W x W : <input id="wwr" type="range" class="radius"></input><span class="value"></span></div>
+                <div>Radius W x R : <input id="wrr" type="range" class="radius"></input><span class="value"></span></div>
+                <div>Radius W x G : <input id="wgr" type="range" class="radius"></input><span class="value"></span></div>
+                <div>Radius W x B : <input id="wbr" type="range" class="radius"></input><span class="value"></span></div>
             </div>
-            <div id="blue">
+            <div id="blue" class="color">
                 <h3>BLUE : </h3>
-                <div>Number : <input type="range" class="number"></input></div>
-                <div>Blue x Blue : <input type="range" class="attraction"></input></div>
-                <div>Blue x Red : <input type="range" class="attraction"></input></div>
-                <div>Blue x White : <input type="range" class="attraction"></input></div>
-                <div>Blue x Green : <input type="range" class="attraction"></input></div>
-                <div>Radius B x B : <input type="range" class="attraction"></input></div>
-                <div>Radius B x R: <input type="range" class="attraction"></input></div>
-                <div>Radius B x W: <input type="range" class="attraction"></input></div>
-                <div>Radius B x G: <input type="range" class="attraction"></input></div>
+                <div>Number : <input type="range" class="number"></input><span class="value"></span></div>
+                <div>Blue x Blue : <input id="bbf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Blue x Red : <input id="brf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Blue x White : <input id="bwf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Blue x Green : <input id="bgf" type="range" class="attraction"></input><span class="value"></span></div>
+                <div>Radius B x B : <input id="bbr" type="range" class="radius"></input><span class="value"></span></div>
+                <div>Radius B x R: <input id="brr" type="range" class="radius"></input><span class="value"></span></div>
+                <div>Radius B x W: <input id="bwr" type="range" class="radius"></input><span class="value"></span></div>
+                <div>Radius B x G: <input id="bgr" type="range" class="radius"></input><span class="value"></span></div>
             </div>
         </div>
     </div>

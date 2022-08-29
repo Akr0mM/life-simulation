@@ -19,10 +19,10 @@ function main(GREEN, RED, WHITE, BLUE) {
     ctx.clearRect(0, 0, cw, ch)
     particles = []
 
-    let greenNumber = GREEN || 100  
-    let redNumber = RED || 100  
-    let whiteNumber = WHITE || 100  
-    let blueNumber = BLUE || 100  
+    let greenNumber = GREEN || 200  
+    let redNumber = RED || 200  
+    let whiteNumber = WHITE || 200  
+    let blueNumber = BLUE || 200  
 
     green = create(greenNumber, 'lime');
     red = create(redNumber, 'red');
@@ -59,7 +59,7 @@ function setInput() {
     numbers.forEach(input => {
         input.min = "0"
         input.max = "3000"
-        input.value = "1000"
+        input.value = "200"
         input.step = "1"
         input.addEventListener('change', reset)
     })

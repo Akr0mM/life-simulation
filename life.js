@@ -30,7 +30,7 @@ function main(GREEN, RED, WHITE, BLUE) {
     blue = create(blueNumber, '#4242ff');
 
     animate();
-};
+}
 
 function rules(config) {
     greenRule(green, config.g.g.force, config.g.g.radius)
@@ -66,10 +66,10 @@ function setInput() {
 
     let attraction = Array.from(document.querySelectorAll('.attraction'))
     attraction.forEach(input => {
-        input.min = "-100"
-        input.max = "100"
+        input.min = "-10"
+        input.max = "10"
         input.value = "0"
-        input.step = "0.5"
+        input.step = "0.05"
     })
 
     let radius = Array.from(document.querySelectorAll('.radius'))
@@ -170,8 +170,8 @@ function updateRules() {
                 radius: document.getElementById('wwr').value
             },
             b: {
-                force: document.getElementById('bbf').value,
-                radius: document.getElementById('bbr').value
+                force: document.getElementById('wbf').value,
+                radius: document.getElementById('wbr').value
             }
         },
         b: {
@@ -247,7 +247,11 @@ function redRule(particles, g, radius) {
         a.x += a.vx;
         a.y += a.vy;
         if (a.x <= 0 || a.x >= cw) { a.vx *= -1 }
+        if (a.x < 0 ) { a.x = 0 }
+        if (a.x > cw) { a.x = cw }
         if (a.y <= 0 || a.y >= ch) { a.vy *= -1 }
+        if (a.y < 0 ) { a.y = 0 }
+        if (a.y > ch) { a.y = ch }
     }
 }
 
@@ -274,7 +278,11 @@ function whiteRule(particles, g, radius) {
         a.x += a.vx;
         a.y += a.vy;
         if (a.x <= 0 || a.x >= cw) { a.vx *= -1 }
+        if (a.x < 0 ) { a.x = 0 }
+        if (a.x > cw) { a.x = cw }
         if (a.y <= 0 || a.y >= ch) { a.vy *= -1 }
+        if (a.y < 0 ) { a.y = 0 }
+        if (a.y > ch) { a.y = ch }
     }
 }
 
@@ -301,7 +309,11 @@ function blueRule(particles, g, radius) {
         a.x += a.vx;
         a.y += a.vy;
         if (a.x <= 0 || a.x >= cw) { a.vx *= -1 }
+        if (a.x < 0 ) { a.x = 0 }
+        if (a.x > cw) { a.x = cw }
         if (a.y <= 0 || a.y >= ch) { a.vy *= -1 }
+        if (a.y < 0 ) { a.y = 0 }
+        if (a.y > ch) { a.y = ch }
     }
 }
 
@@ -328,6 +340,10 @@ function greenRule(particles, g, radius) {
         a.x += a.vx;
         a.y += a.vy;
         if (a.x <= 0 || a.x >= cw) { a.vx *= -1 }
+        if (a.x < 0 ) { a.x = 0 }
+        if (a.x > cw) { a.x = cw }
         if (a.y <= 0 || a.y >= ch) { a.vy *= -1 }
+        if (a.y < 0 ) { a.y = 0 }
+        if (a.y > ch) { a.y = ch }
     }
 }

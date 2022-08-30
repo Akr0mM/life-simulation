@@ -66,8 +66,8 @@ function setInput() {
 
     let attraction = Array.from(document.querySelectorAll('.attraction'))
     attraction.forEach(input => {
-        input.min = "-10"
-        input.max = "10"
+        input.min = "-5"
+        input.max = "5"
         input.value = "0"
         input.step = "0.05"
     })
@@ -224,126 +224,50 @@ function random() {
     }
 }
 
+function generalRule(group, particles, g, radius) {
+  for (let i = 0; i < group.length; i++) {
+    let fx = 0;
+    let fy = 0;
+    let a
+    let b
+    for (let j = 0; j < particles.length; j++) {
+        a = group[i];
+        b = particles[j];
+        let dx = a.x - b.x;
+        let dy = a.y - b.y;
+        let d = Math.sqrt(dx * dx + dy * dy);
+        if (d > 0 && d < radius) {
+            let F = g * 1 / d;
+            fx += (F * dx);
+            fy += (F * dy);
+        }
+    }
+    a.vx = (a.vx + fx) * 0.5
+    a.vy = (a.vy + fy) * 0.5
+    a.x += a.vx;
+    a.y += a.vy;
+    if (a.x <= 0 || a.x >= cw) { a.vx *= -1 }
+    if (a.x < 0 ) { a.x = 0 }
+    if (a.x > cw) { a.x = cw }
+    if (a.y <= 0 || a.y >= ch) { a.vy *= -1 }
+    if (a.y < 0 ) { a.y = 0 }
+    if (a.y > ch) { a.y = ch }
+  }
+
+}
+
 function redRule(particles, g, radius) {
-    for (let i = 0; i < red.length; i++) {
-        let fx = 0;
-        let fy = 0;
-        let a
-        let b
-        for (let j = 0; j < particles.length; j++) {
-            a = red[i];
-            b = particles[j];
-            let dx = a.x - b.x;
-            let dy = a.y - b.y;
-            let d = Math.sqrt(dx * dx + dy * dy);
-            if (d > 0 && d < radius) {
-                let F = g * 1 / d;
-                fx += (F * dx);
-                fy += (F * dy);
-            }
-        }
-        a.vx = (a.vx + fx) * 0.5
-        a.vy = (a.vy + fy) * 0.5
-        a.x += a.vx;
-        a.y += a.vy;
-        if (a.x <= 0 || a.x >= cw) { a.vx *= -1 }
-        if (a.x < 0 ) { a.x = 0 }
-        if (a.x > cw) { a.x = cw }
-        if (a.y <= 0 || a.y >= ch) { a.vy *= -1 }
-        if (a.y < 0 ) { a.y = 0 }
-        if (a.y > ch) { a.y = ch }
-    }
-}
-
-function whiteRule(particles, g, radius) {
-    for (let i = 0; i < white.length; i++) {
-        let fx = 0;
-        let fy = 0;
-        let a
-        let b
-        for (let j = 0; j < particles.length; j++) {
-            a = white[i];
-            b = particles[j];
-            let dx = a.x - b.x;
-            let dy = a.y - b.y;
-            let d = Math.sqrt(dx * dx + dy * dy);
-            if (d > 0 && d < radius) {
-                let F = g * 1 / d;
-                fx += (F * dx);
-                fy += (F * dy);
-            }
-        }
-        a.vx = (a.vx + fx) * 0.5
-        a.vy = (a.vy + fy) * 0.5
-        a.x += a.vx;
-        a.y += a.vy;
-        if (a.x <= 0 || a.x >= cw) { a.vx *= -1 }
-        if (a.x < 0 ) { a.x = 0 }
-        if (a.x > cw) { a.x = cw }
-        if (a.y <= 0 || a.y >= ch) { a.vy *= -1 }
-        if (a.y < 0 ) { a.y = 0 }
-        if (a.y > ch) { a.y = ch }
-    }
-}
-
-function blueRule(particles, g, radius) {
-    for (let i = 0; i < blue.length; i++) {
-        let fx = 0;
-        let fy = 0;
-        let a
-        let b
-        for (let j = 0; j < particles.length; j++) {
-            a = blue[i];
-            b = particles[j];
-            let dx = a.x - b.x;
-            let dy = a.y - b.y;
-            let d = Math.sqrt(dx * dx + dy * dy);
-            if (d > 0 && d < radius) {
-                let F = g * 1 / d;
-                fx += (F * dx);
-                fy += (F * dy);
-            }
-        }
-        a.vx = (a.vx + fx) * 0.5
-        a.vy = (a.vy + fy) * 0.5
-        a.x += a.vx;
-        a.y += a.vy;
-        if (a.x <= 0 || a.x >= cw) { a.vx *= -1 }
-        if (a.x < 0 ) { a.x = 0 }
-        if (a.x > cw) { a.x = cw }
-        if (a.y <= 0 || a.y >= ch) { a.vy *= -1 }
-        if (a.y < 0 ) { a.y = 0 }
-        if (a.y > ch) { a.y = ch }
-    }
+    generalRule(red, particles, g, radius)
 }
 
 function greenRule(particles, g, radius) {
-    for (let i = 0; i < green.length; i++) {
-        let fx = 0;
-        let fy = 0;
-        let a
-        let b
-        for (let j = 0; j < particles.length; j++) {
-            a = green[i];
-            b = particles[j];
-            let dx = a.x - b.x;
-            let dy = a.y - b.y;
-            let d = Math.sqrt(dx * dx + dy * dy);
-            if (d > 0 && d < radius) {
-                let F = g * 1 / d;
-                fx += (F * dx);
-                fy += (F * dy);
-            }
-        }
-        a.vx = (a.vx + fx) * 0.5
-        a.vy = (a.vy + fy) * 0.5
-        a.x += a.vx;
-        a.y += a.vy;
-        if (a.x <= 0 || a.x >= cw) { a.vx *= -1 }
-        if (a.x < 0 ) { a.x = 0 }
-        if (a.x > cw) { a.x = cw }
-        if (a.y <= 0 || a.y >= ch) { a.vy *= -1 }
-        if (a.y < 0 ) { a.y = 0 }
-        if (a.y > ch) { a.y = ch }
-    }
+    generalRule(green, particles, g, radius)
+}
+
+function whiteRule(particles, g, radius) {
+    generalRule(white, particles, g, radius)
+} 
+
+function blueRule(particles, g, radius) {
+    generalRule(blue, particles, g, radius)
 }

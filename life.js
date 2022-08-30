@@ -14,7 +14,8 @@ let blue;
 window.onload = () => {
     main()
     setInput()
-} 
+}
+
 function main(GREEN, RED, WHITE, BLUE) {
     ctx.clearRect(0, 0, cw, ch)
     particles = []
@@ -84,6 +85,45 @@ function setInput() {
     inputs.forEach(input => {
         input.addEventListener('change', updateRules)
     })
+
+    document.getElementById('randomize').addEventListener('click', randomize);
+}
+
+function randomize() {
+  const fmax = 2;
+  document.getElementById('ggf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('grf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('gwf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('gbf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('rrf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('rgf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('rwf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('rbf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('wwf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('wrf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('wgf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('wbf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('bbf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('brf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('bwf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  document.getElementById('bgf').value = Math.round(-fmax*10 + Math.random() * fmax*20) / 10;
+  const rmax = 500;
+  document.getElementById('ggr').value = Math.round(Math.random() * rmax);
+  document.getElementById('grr').value = Math.round(Math.random() * rmax);
+  document.getElementById('gwr').value = Math.round(Math.random() * rmax);
+  document.getElementById('gbr').value = Math.round(Math.random() * rmax);
+  document.getElementById('rrr').value = Math.round(Math.random() * rmax);
+  document.getElementById('rgr').value = Math.round(Math.random() * rmax);
+  document.getElementById('rwr').value = Math.round(Math.random() * rmax);
+  document.getElementById('rbr').value = Math.round(Math.random() * rmax);
+  document.getElementById('wwr').value = Math.round(Math.random() * rmax);
+  document.getElementById('wrr').value = Math.round(Math.random() * rmax);
+  document.getElementById('wgr').value = Math.round(Math.random() * rmax);
+  document.getElementById('wbr').value = Math.round(Math.random() * rmax);
+  document.getElementById('bbr').value = Math.round(Math.random() * rmax);
+  document.getElementById('brr').value = Math.round(Math.random() * rmax);
+  document.getElementById('bwr').value = Math.round(Math.random() * rmax);
+  document.getElementById('bgr').value = Math.round(Math.random() * rmax);
 }
 
 function animate() {
